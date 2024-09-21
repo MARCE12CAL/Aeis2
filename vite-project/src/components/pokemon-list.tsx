@@ -1,9 +1,11 @@
-type Pokemon={
-    name:string;
-    url:string;
+import { PokemonCard } from "./pokemon-card";
 
+type Pokemon = {
+  name: string;
+  url: string;
 };
-const pokemons = [
+
+const pokemons: Pokemon[] = [
     {
       name: "bulbasaur",
       url: "https://pokeapi.co/api/v2/pokemon/1/",
@@ -41,14 +43,12 @@ const pokemons = [
       url: "https://pokeapi.co/api/v2/pokemon/9/",
     },
   ];
-export function PokemonList{;
-return {
-    <div>
-    {
-        pokemons.map((pokemon)=>{
-           <PokemonCard key={pokemon.url} name={pokemon.name}url={pokemon.url}/>
-        }}}
-            </div>
-        };
-   
-}
+  export function PokemonList() {
+    return (
+      <div>
+        {pokemons.map((pokemon) => (
+          <PokemonCard key={pokemon.url} name ={pokemon.name} url={pokemon.url} />
+        ))}
+      </div>
+    );
+  }
